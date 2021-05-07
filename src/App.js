@@ -18,12 +18,20 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-
+      hideBtn: false
     }
     this.fetch = this.fetch.bind(this);
   }
   fetch() {
     this.props.fetchPosts();
+    this.hideBtnHandler();
+  }
+  hideBtnHandler = () => {
+    const {hideBtn} = this.state;
+    this.setState({hideBtn: !hideBtn});
+  }
+  plusCounter = (num) => {
+    return num +1;
   }
   render() {
     const configButton = {
@@ -31,13 +39,13 @@ class App extends Component {
       emitEvent: this.fetch
     }
     const {posts} = this.props;
-    console.log(posts);
+    const {hideBtn} = this.state;
     return (
       <div className='App' data-test='appComponent'>
         <Header />
         <section className='main'>
           <Headline header='Posts' desc='Click the button to render props' tempArr={tempArr} />
-          <Button  {...configButton} />
+          {!hideBtn &&  <Button  {...configButton} />}
           {
           posts.length
           ? posts.map(post => {
