@@ -33,7 +33,7 @@ class App extends Component {
     const {posts} = this.props;
     console.log(posts);
     return (
-      <div>
+      <div className='App' data-test='appComponent'>
         <Header />
         <section className='main'>
           <Headline header='Posts' desc='Click the button to render props' tempArr={tempArr} />
