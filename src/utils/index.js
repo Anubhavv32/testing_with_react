@@ -8,7 +8,6 @@ export const checkPropsTest = (component, expectedProps) => {
 }
 
 export function findByTestAttr (component, attr) {
-  console.log(component.debug());
   const wrapper = component.find(`[data-test='${attr}']`);
   return wrapper;
 };

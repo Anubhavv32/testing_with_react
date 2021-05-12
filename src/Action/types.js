@@ -1,3 +1,4 @@
 export const types = {
-  GET_POSTS: 'getPosts'
+  GET_POSTS: 'getPosts',
+  CHANGE_INPUT: 'changeInput'
 }

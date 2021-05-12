@@ -5,8 +5,10 @@ import Header from './component/Header';
 import Headline from './component/Headline';
 import Button from './component/Button';
 import ListItem from './component/ListItem';
+import ReduxForm from './component/ReduxForm';
 import {fetchPosts} from './Action';
 import './App.scss';
+import { reducer as formReducer } from 'redux-form';
 const tempArr = [{
   fName: 'Joe',
   lName: 'Bloggs',
@@ -41,10 +43,16 @@ class App extends Component {
     const {posts} = this.props;
     const {hideBtn} = this.state;
     return (
-      <div className='App' data-test='appComponent'>
+      <div className='App container' data-test='appComponent'>
+        <div className='row'>
+          <div className='col'>
+
+          </div>
+        </div>
         <Header />
         <section className='main'>
           <Headline header='Posts' desc='Click the button to render props' tempArr={tempArr} />
+          <ReduxForm />
           {!hideBtn &&  <Button  {...configButton} />}
           {
           posts.length

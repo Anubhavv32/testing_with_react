@@ -1,6 +1,3 @@
-import { render, screen } from '@testing-library/react';
-import { Provider } from 'react-redux';
-import { store } from './createStore';
 import { shallow } from 'enzyme';
 import React from 'react';
 
